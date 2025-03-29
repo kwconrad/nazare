@@ -1,5 +1,5 @@
 import { Canvas, useFrame, useThree } from '@react-three/fiber';
-import { useMemo, useRef, useEffect, useState } from 'react';
+import { useEffect, useMemo, useRef } from 'react';
 import { Mesh, PlaneGeometry, Vector2 } from 'three';
 import fragmentShader from './shaders/fragment.glsl';
 import vertexShader from './shaders/vertex.glsl';
