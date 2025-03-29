@@ -7,7 +7,6 @@ import vertexShader from './shaders/vertex.glsl';
 const FullScreenQuad = () => {
   const mesh = useRef<Mesh<PlaneGeometry>>(null);
   const { viewport } = useThree();
-  const [mouse, setMouse] = useState(new Vector2(0, 0));
 
   // Create uniforms with screen size and mouse position
   const uniforms = useMemo(() => {
@@ -38,7 +37,6 @@ const FullScreenQuad = () => {
     const handleMouseMove = (event: MouseEvent) => {
       const x = (event.clientX / window.innerWidth) * 2 - 1; // Normalize to [-1, 1]
       const y = -(event.clientY / window.innerHeight) * 2 + 1; // Normalize to [-1, 1]
-      setMouse(new Vector2(x, y));
       uniforms.u_mouse.value.set(x, y);
     };
 
